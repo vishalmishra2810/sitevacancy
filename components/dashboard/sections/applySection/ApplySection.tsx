@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./ApplySection.module.scss";
-import search from "../../../../assets/search.svg";
+
 import Image from "next/image";
+import { HOW_TO_APPLY } from "./constant";
 
 function ApplySections() {
   return (
@@ -9,7 +10,7 @@ function ApplySections() {
       <div className={style.applySection__header}>
         <p className={style.applySection__header__title}>How to Apply</p>
         <h2 className={style.applySection__header__description}>
-          Follow Easy 3 Steps
+          Follow Easy 4 Steps
         </h2>
         <p className={style.applySection__header__subtitle}>
           You can apply for a job by follow these steps below <br /> and get
@@ -17,25 +18,34 @@ function ApplySections() {
         </p>
       </div>
       <div className={style.applySection__body}>
-        <div className={style.applySection__body__item}>
-          <div className={style.applySection__body__item__top}></div>
-          <div className={style.applySection__body__item__item_body}>
-            <Image
-              src={search}
-              alt="search"
-              width={42}
-              height={42}
-              className={style.applySection__body__item__icon}
-            />
-            <h3 className={style.applySection__body__item__title}>
-              Search Job
-            </h3>
-            <p className={style.applySection__body__item__description}>
-              First you need to search for a job that you want to apply.
-            </p>
+        {HOW_TO_APPLY.map((item, index) => (
+          <div className={style.applySection__body__item} key={index}>
+            <div
+              className={style.applySection__body__item__top_box}
+              style={{ border: "3px solid " + item.color }}
+            ></div>
+            <div className={style.applySection__body__item__body}>
+              <Image
+                src={item?.image}
+                alt="search"
+                width={48}
+                height={48}
+                style={{ filter: item.hex_color }}
+                className={style.applySection__body__item__icon}
+              />
+              <h3 className={style.applySection__body__item__title}>
+                {item?.title}
+              </h3>
+              <p className={style.applySection__body__item__description}>
+                {item?.description}
+              </p>
+            </div>
+            <div
+              className={style.applySection__body__item__bottom_box}
+              style={{ border: "3px solid " + item.color }}
+            ></div>
           </div>
-          <div className={style.applySection__body__item__bottom}></div>
-        </div>
+        ))}
       </div>
     </div>
   );
