@@ -1,0 +1,111 @@
+.topSection {
+  height: min(800px, 100vh);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: var(--primary-black);
+  .topSection__header {
+    height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    .topSection__header__logo {
+      font-family: "Open Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .topSection__header__menu {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      list-style-type: none;
+      .topSection__header__menu__item {
+        font-family: "Open Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2;
+        cursor: pointer;
+        &:hover {
+          color: #fa4f08;
+        }
+      }
+    }
+  }
+  .topSection__body {
+    margin-top: 62px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .topSection__body__left {
+      flex: 3;
+      .topSection__body__left__title {
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 16px;
+        font-family: "Open Sans", sans-serif;
+      }
+      .topSection__body__left__description {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        font-family: "Open Sans", sans-serif;
+      }
+      .topSection__body__left__search {
+        margin-top: 62px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 72px;
+        border-radius: 36px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        padding: 0 32px;
+        .topSection__body__left__search__input {
+          flex: 1;
+          height: 72px;
+          border: none;
+          background-color: transparent;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.5;
+          font-family: "Open Sans", sans-serif;
+          &:focus {
+            outline: none;
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .topSection__body__left__search__button {
+        width: 140px;
+        border-radius: 26px;
+        height: 52px;
+        border: none;
+        background-color: #fa4f08;
+        margin-left: 8px;
+        color: #fff;
+        font-size: 20px;
+        font-family: "Open Sans", sans-serif;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .topSection__body__right {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      .topSection__body__right__image {
+        object-fit: contain;
+      }
+    }
+  }
+  .topSection_red {
+    color: #fa4f08;
+  }
+}
