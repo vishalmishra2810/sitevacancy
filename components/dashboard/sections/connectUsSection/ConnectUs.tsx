@@ -4,6 +4,7 @@ import style from "./ConnectUs.module.scss";
 function ConnectUs() {
   return (
     <div className={style.connectUs}>
+      <div className={style.connectUs__bubble_top}></div>
       <div className={style.connectUs_container}>
         <h2 className={style.title}>
           Let{"'s"} get connected and start <br />
@@ -14,6 +15,7 @@ function ConnectUs() {
         </p>
         <div className={style.connectUs__btn}>Sign Up</div>
       </div>
+      <div className={style.connectUs__bubble_bottom}></div>
     </div>
   );
 }

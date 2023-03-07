@@ -1,0 +1,76 @@
+.testimonialSection {
+  width: var(--max-width);
+  margin: 72px auto;
+  .testimonialSection__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title {
+      font-size: 44px;
+      font-weight: 700;
+      font-family: "Open Sans", sans-serif;
+      color: var(--primary-black);
+      text-align: center;
+    }
+    .description {
+      margin-top: 32px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: "Open Sans", sans-serif;
+      color: var(--primary-black);
+      text-align: center;
+    }
+    .testimonialSection__card {
+      margin-top: 82px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      .testimonialSection__card__item {
+        padding: 24px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .testimonialSection__card__img {
+          position: absolute;
+          top: -40px;
+          .testimonialSection__card__img__icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        .testimonialSection__card__content__title {
+          font-size: 18px;
+          font-weight: 600;
+          font-family: "Open Sans", sans-serif;
+          color: var(--primary-black);
+          text-align: center;
+          margin-top: 16px;
+        }
+        .testimonialSection__card__content__subtitle {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Open Sans", sans-serif;
+          color: var(--primary-black);
+          text-align: center;
+        }
+        .testimonialSection__card__content__description {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: "Open Sans", sans-serif;
+          color: var(--primary-black);
+          text-align: center;
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}

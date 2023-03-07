@@ -1,0 +1,46 @@
+.exploreSection {
+  margin: 62px auto;
+  width: var(--max-width);
+  .exploreSection__container {
+    display: flex;
+    gap: 52px;
+    .exploreSection__left {
+      background-color: #fff;
+      padding: 16px 12px;
+      border: 1px solid #fa4f08;
+      border-radius: 24px;
+    }
+    .exploreSection__right {
+      .title {
+        font-size: 48px;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+        color: var(--primary-black);
+        line-height: 1.2;
+      }
+      .description {
+        margin-top: 32px;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        color: #52566e;
+        line-height: 1.5;
+      }
+      .exploreSection__right__btn {
+        margin-top: 52px;
+        cursor: pointer;
+        width: 220px;
+        height: 62px;
+        background-color: #fa4f08;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+        color: #fff;
+      }
+    }
+  }
+}
