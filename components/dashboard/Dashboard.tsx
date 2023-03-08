@@ -1,3 +1,4 @@
+import Footer from "@/common/footer/Footer";
 import React from "react";
 import style from "./Dashboard.module.scss";
 import ApplySections from "./sections/applySection/ApplySection";
@@ -22,6 +23,7 @@ function Dashboard() {
       <ExploreSection />
       <TestimonialSection />
       <ConnectUs />
+      <Footer />
     </div>
   );
 }
