@@ -28,8 +28,8 @@ function ApplySections() {
               <Image
                 src={item?.image}
                 alt="search"
-                width={48}
-                height={48}
+                width={52}
+                height={52}
                 style={{ filter: item.hex_color }}
                 className={style.applySection__body__item__icon}
               />

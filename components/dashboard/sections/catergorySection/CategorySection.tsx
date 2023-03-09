@@ -29,6 +29,7 @@ function CategorySection() {
               ></div>
             </div>
           ))}
+          <div className={style.more_category}>100+ More Category</div>
         </div>
       </div>
     </div>

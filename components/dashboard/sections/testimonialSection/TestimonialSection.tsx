@@ -37,8 +37,6 @@ function TestimonialSection() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 tincidunt, nisl eget ultricies tincidunt, nisl elit lacinia
                 tortor, vitae lacinia nisl lorem eget nisl. Sed tincidunt, nisl
-                eget ultricies tincidunt, nisl elit lacinia tortor, vitae
-                lacinia nisl lorem eget nisl.
               </p>
             </div>
           ))}

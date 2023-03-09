@@ -13,7 +13,7 @@
       color: var(--primary-red);
     }
     .applySection__header__description {
-      font-size: 36px;
+      font-size: 46px;
       line-height: 1.5;
       font-family: "Open Sans", sans-serif;
       color: var(--primary-black);
@@ -45,18 +45,22 @@
         border-radius: 48px;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
         background-color: #fff;
+        .applySection__body__item__icon{
+          margin-top: 8px;
+        }
         .applySection__body__item__title {
           font-size: 22px;
-          margin-top: 8px;
+          margin-top: 12px;
           line-height: 1.2;
           font-family: "Poppins", sans-serif;
           color: var(--primary-black);
         }
         .applySection__body__item__description {
-          font-size: 15px;
-          margin-top: 8px;
+          font-size: 16px;
+          margin-top: 12px;
+          font-weight: 400;
           line-height: 1.2;
-          font-family: "Poppins", sans-serif;
+          font-family: "Open Sans", sans-serif;
           color: var(--primary-black);
         }
       }
