@@ -3,23 +3,46 @@ import React from "react";
 import style from "./TopSection.module.scss";
 import mobile_play from "../../../../assets/mobile_play.png";
 import search from "../../../../assets/search.svg";
+import { useRouter } from "next/router";
+import { URLPaths } from "@/utils/constant";
 
 function TopSection() {
+  const router = useRouter();
+
+  const goToHomePage = () => {
+    router.push(URLPaths.HOME);
+  };
   return (
     <div className={style.topSection}>
       <div className={style.topSection__header}>
-        <div className={style.topSection__header__logo}>
+        <div className={style.topSection__header__logo} onClick={goToHomePage}>
           Job
           <span className={style.topSection_red}>Pao</span>
         </div>
         <ul className={style.topSection__header__menu}>
-          {["Home", "Jobs", "Companies", "Blog", "FAQ", "Contact"].map(
+          {["Home", "Jobs", "Companies", "Post a Job", "FAQ"].map(
             (item, index) => (
               <li className={style.topSection__header__menu__item} key={index}>
                 {item}
               </li>
             )
           )}
+        </ul>
+        <ul className={style.topSection__header__menu}>
+          {["Login", "Register"].map((item, index) => (
+            <li
+              className={`${style.topSection__header__menu__item}
+               ${
+                 item === "Login"
+                   ? style.topSection__header__menu__item__login
+                   : style.topSection__header__menu__item__register
+               }
+              `}
+              key={index}
+            >
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
       <div className={style.topSection__body}>
