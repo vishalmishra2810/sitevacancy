@@ -5,6 +5,8 @@ import mobile_play from "../../../../assets/mobile_play.png";
 import search from "../../../../assets/search.svg";
 import { useRouter } from "next/router";
 import { URLPaths } from "@/utils/constant";
+import { HEADER_LINKS } from "./constant";
+import Link from "next/link";
 
 function TopSection() {
   const router = useRouter();
@@ -20,13 +22,15 @@ function TopSection() {
           <span className={style.topSection_red}>Pao</span>
         </div>
         <ul className={style.topSection__header__menu}>
-          {["Home", "Jobs", "Companies", "Post a Job", "FAQ"].map(
-            (item, index) => (
-              <li className={style.topSection__header__menu__item} key={index}>
-                {item}
-              </li>
-            )
-          )}
+          {HEADER_LINKS.map((item, index) => (
+            <Link
+              className={style.topSection__header__menu__item}
+              key={index}
+              href={item?.path}
+            >
+              {item?.label}
+            </Link>
+          ))}
         </ul>
         <ul className={style.topSection__header__menu}>
           {["Login", "Register"].map((item, index) => (
