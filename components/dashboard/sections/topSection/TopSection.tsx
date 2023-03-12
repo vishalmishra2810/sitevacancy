@@ -5,7 +5,7 @@ import mobile_play from "../../../../assets/mobile_play.png";
 import search from "../../../../assets/search.svg";
 import { useRouter } from "next/router";
 import { URLPaths } from "@/utils/constant";
-import { HEADER_LINKS } from "./constant";
+import { HEADER_LINKS, HEADER_LINKS_WITH_AUTH } from "./constant";
 import Link from "next/link";
 
 function TopSection() {
@@ -33,19 +33,20 @@ function TopSection() {
           ))}
         </ul>
         <ul className={style.topSection__header__menu}>
-          {["Login", "Register"].map((item, index) => (
-            <li
+          {HEADER_LINKS_WITH_AUTH.map((item, index) => (
+            <Link
+              href={item?.path}
               className={`${style.topSection__header__menu__item}
                ${
-                 item === "Login"
+                 item?.label === "Login"
                    ? style.topSection__header__menu__item__login
                    : style.topSection__header__menu__item__register
                }
               `}
               key={index}
             >
-              {item}
-            </li>
+              {item?.label}
+            </Link>
           ))}
         </ul>
       </div>
