@@ -1,0 +1,87 @@
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #b9beca;
+  width: 100vw;
+}
+.container {
+  display: flex;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  .left_container {
+    flex: 1;
+    background-color: #f2f5f9;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .right_container {
+    width: 400px;
+    flex: 1;
+    padding: 16px;
+    border-radius: 16px;
+    .title {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 20px;
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "Open Sans", sans-serif;
+      }
+      .input {
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+      }
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 1.5rem;
+      background-color: #0070f3;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0060c0;
+    }
+    .text {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 14px;
+      font-family: "Open Sans", sans-serif;
+      a {
+        color: #0070f3;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
