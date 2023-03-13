@@ -1,0 +1,31 @@
+.selectOption {
+  .selectOption__container__title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    margin: 8px 0px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .selectOption__container__options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .selectOption__container__options__option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .selectOption__container__options__option__input {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .selectOption__container__options__option__label {
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+        font-family: "Open Sans", sans-serif;
+      }
+    }
+  }
+}
