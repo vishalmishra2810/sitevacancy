@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import style from "./PostJobSection.module.scss";
-import postJob from "../../../../assets/postJob.png";
+import postJob from "../../../../assets/postjob.png";
 
 function PostJobSection() {
   return (
