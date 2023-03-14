@@ -3,4 +3,5 @@ export enum URLPaths {
   LOGIN = "/login",
   REGISTER = "/signup",
   JOB_LIST = "/job-list",
+  FAQ = "/faq",
 }
