@@ -19,7 +19,7 @@ export const HEADER_LINKS = [
   },
   {
     label: " Faq",
-    path: URLPaths.JOB_LIST,
+    path: URLPaths.FAQ,
   },
 ];
 
