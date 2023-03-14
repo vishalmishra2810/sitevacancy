@@ -1,22 +1,14 @@
 .jobList {
   background-color: #b9beca;
   height: calc(100vh - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
   .main__container {
-    width: var(--max-width);
+    width: 1170px;
     margin: 0px auto;
-    padding: 32px 0px;
+    padding: 24px 0px;
     .jobList__container {
       display: flex;
     }
   }
-}
-
-.topHeader {
-  height: 56px;
-  display: flex;
-  background-color: #fff;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-radius: 4px;
 }
