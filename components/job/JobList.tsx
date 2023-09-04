@@ -2,6 +2,7 @@ import React from "react";
 import JobDetails from "./jobDetails/JobDetails";
 import styles from "./JobList.module.scss";
 import LeftSideBar from "./leftSideBar/LeftSideBar";
+import Footer from "@/common/footer/Footer";
 
 function JobList() {
   return (
@@ -11,6 +12,7 @@ function JobList() {
           <LeftSideBar />
           <JobDetails />
         </div>
+        <Footer />
       </div>
     </div>
   );
