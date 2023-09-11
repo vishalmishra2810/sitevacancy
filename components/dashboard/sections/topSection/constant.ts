@@ -21,6 +21,10 @@ export const HEADER_LINKS = [
     label: " Faq",
     path: URLPaths.FAQ,
   },
+  {
+    label: "Story Hub",
+    path: URLPaths.STORY_HUB,
+  },
 ];
 
 export const HEADER_LINKS_WITH_AUTH = [
