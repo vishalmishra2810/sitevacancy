@@ -1,0 +1,25 @@
+.story {
+    background-color: #efefef;
+    height: calc(100vh - 70px);
+    font-family: "Open Sans", sans-serif;
+    overflow-y: scroll;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  
+    padding: 50px 20px;
+  }
+  
+  .question {
+    margin-bottom: 40px;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    p {
+      line-height: 1.6;
+    }
+  }
+  
