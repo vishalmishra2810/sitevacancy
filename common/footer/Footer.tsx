@@ -52,7 +52,7 @@ const Footer = () => {
         ))}
       </div>
       <div className={styles.bottomSection}>
-        <p>&copy; 2023 JobPao. All Rights Reserved.</p>
+        <p>&copy; 2023 Site Vacancy. All Rights Reserved.</p>
       </div>
     </footer>
   );
