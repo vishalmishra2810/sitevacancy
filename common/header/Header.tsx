@@ -11,8 +11,8 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.topSection__header__logo} onClick={goToHomePage}>
-        Job
-        <span className={styles.topSection_red}>Pao</span>
+        Site
+        <span className={styles.topSection_red}>Vacancy</span>
       </div>
     </header>
   );
