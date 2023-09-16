@@ -32,7 +32,7 @@ function TopSection() {
             </Link>
           ))}
         </ul>
-        <ul className={style.topSection__header__menu}>
+        {/* <ul className={style.topSection__header__menu}>
           {HEADER_LINKS_WITH_AUTH.map((item, index) => (
             <Link
               href={item?.path}
@@ -48,7 +48,7 @@ function TopSection() {
               {item?.label}
             </Link>
           ))}
-        </ul>
+        </ul> */}
       </div>
       <div className={style.topSection__body}>
         <div className={style.topSection__body__left}>

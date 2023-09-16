@@ -23,27 +23,33 @@
     flex-wrap: wrap;
     gap: 32px;
     margin-top: 24px;
+    font-family: "Open Sans", sans-serif;
     .jobDetails__container_item {
-      width: 300px;
+      width: 100%;
       background-color: #fff;
       padding: 16px;
       border-radius: 8px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      .jobDetails__container_item_company{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
       .jobDetails__container_item_title {
-        margin-top: 8px;
-        font-size: 16px;
+        margin-top: 12px;
+        font-size: 20px;
         font-weight: 600;
         color: #000;
         font-family: "Open Sans", sans-serif;
       }
       .jobDetails__container_item_description {
-        margin-top: 12px;
-        font-size: 14px;
+        margin-top: 16px;
+        font-size: 16px;
         font-weight: 400;
         color: #000;
         font-family: "Open Sans", sans-serif;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }

@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+.env 
+
+NEXT_PUBLIC_SANITY_PROJECT_ID = "6gj2z5og"
+NEXT_PUBLIC_SANITY_DATASET = "production"
+NEXT_PUBLIC_SANITY_SECRET_TOKEN = "skV78n6tr7GYFIHcimKMgLiSeKAHsQyl1UJXZAf3BhGbRXD1zFsGK85jCeOu8u6ghcErQXI0LX81w6oaRoWSUeha8VoOG3UWrxflov0jbFWmkEPthyxeYx0Gj61v7KEy1v0ECGkg1cnKsYO4knogHSsZIlFdIfaYn7rsThdltPZq25nVuXLB"
+
 
 ## Getting Started
 

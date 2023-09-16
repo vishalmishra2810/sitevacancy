@@ -2,8 +2,13 @@ import Image from "next/image";
 import React from "react";
 import style from "./PostJobSection.module.scss";
 import postJob from "../../../../assets/postjob.png";
+import { URLPaths } from "@/utils/constant";
+
 
 function PostJobSection() {
+  const handleButtonClick = () => {
+    window.location.href = URLPaths.POST_JOB;
+  };
   return (
     <div className={style.postJobSection}>
       <div className={style.postJobSection__container}>
@@ -14,7 +19,7 @@ function PostJobSection() {
           <p className={style.description}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <div className={style.postJobSection__left__btn}>Post a Job</div>
+          <div className={style.postJobSection__left__btn} onClick={handleButtonClick}>Post a Job</div>
         </div>
         <div className={style.postJobSection__right}>
           <Image

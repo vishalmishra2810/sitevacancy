@@ -1,4 +1,24 @@
 import styles from "./Footer.module.scss";
+
+const columnsData = [
+  {
+    title: "Column 1",
+    links: ["Link 1", "Link 2", "Link 3"],
+  },
+  {
+    title: "Column 2",
+    links: ["Link 4", "Link 5", "Link 6"],
+  },
+  {
+    title: "Column 3",
+    links: ["Link 7", "Link 8", "Link 9"],
+  },
+  {
+    title: "Column 4",
+    links: ["Link 10", "Link 11", "Link 12"],
+  },
+];
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -11,49 +31,28 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.newsletter}>
-          <input type="email" placeholder="Enter your email" 
-          className={styles.newsletter_input}/>
-          <button
-            className={styles.newsletter_button}
-          >Subscribe</button>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className={styles.newsletter_input}
+          />
+          <button className={styles.newsletter_button}>Subscribe</button>
         </div>
       </div>
       <div className={styles.middleSection}>
-        <div className={styles.column}>
-          <h3>Column 1</h3>
-          <ul>
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <h3>Column 2</h3>
-          <ul>
-            <li>Link 4</li>
-            <li>Link 5</li>
-            <li>Link 6</li>
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <h3>Column 3</h3>
-          <ul>
-            <li>Link 7</li>
-            <li>Link 8</li>
-            <li>Link 9</li>
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <h3>Column 4</h3>
-          <ul>
-            <li>Link 10</li>
-            <li>Link 11</li>
-            <li>Link 12</li>
-          </ul>
-        </div>
+        {columnsData.map((column, index) => (
+          <div className={styles.column} key={index}>
+            <h3>{column.title}</h3>
+            <ul>
+              {column.links.map((link, linkIndex) => (
+                <li key={linkIndex}>{link}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div className={styles.bottomSection}>
-        <p>&copy; 2023 JobPao. All Rights Reserved.</p>
+        <p>&copy; 2023 Site Vacancy. All Rights Reserved.</p>
       </div>
     </footer>
   );
