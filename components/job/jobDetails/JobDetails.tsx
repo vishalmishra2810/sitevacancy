@@ -1,8 +1,9 @@
 import CustomSelect from "@/common/customSelect/CustomSelect";
 import React, { useState } from "react";
 import styles from "./JobDetails.module.scss";
-import Image from "next/image";
-import { JOB_DATA } from "./constant";
+import JobListing from "@/response/jobListing";
+import SanityImage from "@/common/sanityImage/SanityImage";
+import SanityDescription from "@/common/sanityDescription/SanityDescription";
 
 const options = [
   { value: "option1", label: "Option 1" },
@@ -10,7 +11,10 @@ const options = [
   { value: "option3", label: "Option 3" },
 ];
 
-function JobDetails() {
+interface JobsProps {
+  jobs: JobListing[];
+}
+function JobDetails({ jobs }: JobsProps) {
   const [selectedOption, setSelectedOption] = useState(options[0].value);
 
   const handleChange = (event: any) => {
@@ -30,48 +34,54 @@ function JobDetails() {
         </div>
       </div>
       <div className={styles.jobDetails__container}>
-        {JOB_DATA?.map((item: any, index: number) => (
-          <div className={styles.jobDetails__container_item} key={index}>
-            <Image
-              src={item.logo}
-              alt={item.company}
-              width={50}
-              height={50}
-              className={styles.jobDetails__container_item_logo}
-            />
-            <div className={styles.jobDetails__container_item_title}>
-              {item?.title}
+        {jobs &&
+          jobs?.map((item: JobListing, index: number) => (
+            <div className={styles.jobDetails__container_item} key={index}>
+              <div className={styles.jobDetails__container_item_company}>
+                <SanityImage img={item?.companyLogo} />
+                <div className={styles.jobDetails__container_item_company_name}>
+                  {item?.companyName}
+                </div>
+              </div>
+              <div className={styles.jobDetails__container_item_title}>
+                {item?.jobTitle}
+              </div>
+              <div className={styles.jobDetails__container_item_description}>
+                <SanityDescription
+                  description={item?.jobDescription}
+                  limit={3}
+                />
+              </div>
+              <div className={styles.jobDetails__container_item_properties}>
+                <div
+                  className={styles.jobDetails__container_item_properties_item}
+                >
+                  {item.jobType}
+                </div>
+                <div
+                  className={styles.jobDetails__container_item_properties_item}
+                >
+                  {item.location}
+                </div>
+                <div
+                  className={styles.jobDetails__container_item_properties_item}
+                >
+                  {new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                  }).format(parseFloat(item?.salary))}
+                </div>
+              </div>
+              <div className={styles.jobDetails__container_item_footer}>
+                <div className={styles.jobDetails__container_item_footer_apply}>
+                  Show More
+                </div>
+                <div className={styles.jobDetails__container_item_footer_save}>
+                  Save
+                </div>
+              </div>
             </div>
-            <div className={styles.jobDetails__container_item_description}>
-              {item?.description}
-            </div>
-            <div className={styles.jobDetails__container_item_properties}>
-              <div
-                className={styles.jobDetails__container_item_properties_item}
-              >
-                Full Time
-              </div>
-              <div
-                className={styles.jobDetails__container_item_properties_item}
-              >
-                Remote
-              </div>
-              <div
-                className={styles.jobDetails__container_item_properties_item}
-              >
-                $100k - $120k
-              </div>
-            </div>
-            <div className={styles.jobDetails__container_item_footer}>
-              <div className={styles.jobDetails__container_item_footer_apply}>
-                Apply Now
-              </div>
-              <div className={styles.jobDetails__container_item_footer_save}>
-                Save
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
