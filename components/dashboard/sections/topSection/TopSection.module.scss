@@ -91,6 +91,7 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
           rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         padding: 0 32px;
+        position: relative;
         .topSection__body__left__search__input {
           flex: 1;
           height: 72px;
@@ -136,4 +137,8 @@
   .topSection_red {
     color: #fa4f08;
   }
+}
+.topSection__body__left__remove_radius{
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
