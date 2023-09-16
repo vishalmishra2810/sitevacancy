@@ -55,10 +55,6 @@ function JobDetails({ jobs }: JobsProps) {
               <div className={styles.jobDetails__container_item_title}>
                 {item?.jobTitle}
               </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 16f890870a936359e45a33b037eaed14f78dd181
               <div className={styles.jobDetails__container_item_description}>
                 <SanityDescription
                   description={item?.jobDescription}
@@ -86,7 +82,6 @@ function JobDetails({ jobs }: JobsProps) {
                 </div>
               </div>
               <div className={styles.jobDetails__container_item_footer}>
-<<<<<<< HEAD
                 <button
                   onClick={handleButtonChange}
                   className={styles.jobDetails__container_item_footer_apply}
@@ -95,11 +90,6 @@ function JobDetails({ jobs }: JobsProps) {
                 </button>
                 {expandedJob && <ExpandedJob jobs={jobs} />}
 
-=======
-                <div className={styles.jobDetails__container_item_footer_apply}>
-                  Show More
-                </div>
->>>>>>> 16f890870a936359e45a33b037eaed14f78dd181
                 <div className={styles.jobDetails__container_item_footer_save}>
                   Save
                 </div>
