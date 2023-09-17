@@ -5,17 +5,17 @@ export const CATEGORY_SECTION = [
     color: "#FA4F08",
   },
   {
-    title: "FrontEnd Developer",
+    title: "BackeEnd Developer",
     description: 200,
     color: "#6736C3",
   },
   {
-    title: "FrontEnd Developer",
+    title: "Full Stack Developer",
     description: 200,
     color: "#FEB813",
   },
   {
-    title: "FrontEnd Developer",
+    title: "Social Media Marketer",
     description: 200,
     color: "#005BF9",
   },

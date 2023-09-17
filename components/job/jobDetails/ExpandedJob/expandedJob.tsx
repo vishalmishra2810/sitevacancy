@@ -5,7 +5,14 @@ import styles from "../JobDetails.module.scss";
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 
-export const ExpandedJob: React.FC<{ jobs: JobListing[] }> = ({ jobs }) => {
+export const ExpandedJob: React.FC<{
+  jobs: JobListing[];
+  setExpandedJob: any;
+}> = ({ jobs, setExpandedJob }) => {
+  const closeModal = () => {
+    setExpandedJob(false);
+  };
+
   return (
     <div className={styles.jobDetails}>
       <div className={styles.jobDetails__container}>
@@ -21,7 +28,7 @@ export const ExpandedJob: React.FC<{ jobs: JobListing[] }> = ({ jobs }) => {
               <div className={styles.jobDetails__container_item_title}>
                 {item?.jobTitle}
               </div>
-              <CloseOutlined rev={undefined} />
+              <CloseOutlined rev={undefined} onClick={closeModal} />
               <div className={styles.jobDetails__container_item_description}>
                 <SanityDescription
                   description={item?.jobDescription}
