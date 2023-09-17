@@ -88,7 +88,7 @@ function JobDetails({ jobs }: JobsProps) {
                 >
                   Show More
                 </button>
-                {expandedJob && <ExpandedJob jobs={jobs} />}
+                {expandedJob && <ExpandedJob jobs={jobs} setExpandedJob={setExpandedJob} />}
 
                 <div className={styles.jobDetails__container_item_footer_save}>
                   Save

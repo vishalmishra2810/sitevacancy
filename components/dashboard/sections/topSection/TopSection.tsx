@@ -42,8 +42,8 @@ function TopSection() {
     <div className={style.topSection}>
       <div className={style.topSection__header}>
         <div className={style.topSection__header__logo} onClick={goToHomePage}>
-          Job
-          <span className={style.topSection_red}>Pao</span>
+          Site
+          <span className={style.topSection_red}>Vacancy</span>
         </div>
         <ul className={style.topSection__header__menu}>
           {HEADER_LINKS.map((item, index) => (
@@ -111,7 +111,9 @@ function TopSection() {
             >
               Search
             </button>
-            {searchResult.length> 0 && <ShowSearchResult searchResult={searchResult} />}
+            {searchResult.length > 0 && (
+              <ShowSearchResult searchResult={searchResult} />
+            )}
           </div>
         </div>
         <div className={style.topSection__body__right}>
