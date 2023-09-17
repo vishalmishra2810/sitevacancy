@@ -3,10 +3,12 @@ import React from "react";
 import style from "./PostJobSection.module.scss";
 import postJob from "../../../../assets/postjob.png";
 import { URLPaths } from "@/utils/constant";
+import { useRouter } from "next/router";
 
 function PostJobSection() {
+  const router = useRouter();
   const handleButtonClick = () => {
-    window.location.href = URLPaths.POST_JOB;
+    router.push(URLPaths.POST_JOB);
   };
   return (
     <div className={style.postJobSection}>
@@ -16,7 +18,7 @@ function PostJobSection() {
             500+ World Top Company Posted Their Job
           </h2>
           <p className={style.description}>
-            Explore a world of opportunity with 500+ of the globe's top
+            {`Explore a world of opportunity with 500+ of the globe's top
             companies posting their job openings on our platform. Whether you're
             a seasoned professional or just starting your career journey, our
             website offers a gateway to prestigious organizations seeking
@@ -25,7 +27,7 @@ function PostJobSection() {
             dream job, enhance your career, and embark on a path to success.
             Join our platform today and access an unparalleled selection of job
             opportunities from the world's leading companies. Your next career
-            move awaits at Site Vacancy.
+            move awaits at Site Vacancy.`}
           </p>
           <div
             className={style.postJobSection__left__btn}

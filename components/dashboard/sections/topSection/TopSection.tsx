@@ -100,7 +100,7 @@ function TopSection() {
             />
             <input
               type="text"
-              placeholder="Job Title, Keywords, or Company"
+              placeholder="Search by Job Title, Keywords, or Company"
               className={style.topSection__body__left__search__input}
               value={query}
               onChange={handleQueryChange}
