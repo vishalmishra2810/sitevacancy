@@ -42,8 +42,8 @@ function TopSection() {
     <div className={style.topSection}>
       <div className={style.topSection__header}>
         <div className={style.topSection__header__logo} onClick={goToHomePage}>
-          Job
-          <span className={style.topSection_red}>Pao</span>
+          Site
+          <span className={style.topSection_red}>Vacancy</span>
         </div>
         <ul className={style.topSection__header__menu}>
           {HEADER_LINKS.map((item, index) => (
@@ -100,7 +100,7 @@ function TopSection() {
             />
             <input
               type="text"
-              placeholder="Job Title, Keywords, or Company"
+              placeholder="Search by Job Title, Keywords, or Company"
               className={style.topSection__body__left__search__input}
               value={query}
               onChange={handleQueryChange}

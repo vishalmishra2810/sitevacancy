@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styles from "./JobDetails.module.scss";
 import JobListing from "@/response/jobListing";
 import SanityImage from "@/common/sanityImage/SanityImage";
-import SanityDescription from "@/common/sanityDescription/SanityDescription";
 import { ExpandedJob } from "./ExpandedJob/expandedJob";
 
 const options = [
@@ -55,12 +54,6 @@ function JobDetails({ jobs }: JobsProps) {
               <div className={styles.jobDetails__container_item_title}>
                 {item?.jobTitle}
               </div>
-              <div className={styles.jobDetails__container_item_description}>
-                <SanityDescription
-                  description={item?.jobDescription}
-                  limit={3}
-                />
-              </div>
               <div className={styles.jobDetails__container_item_properties}>
                 <div
                   className={styles.jobDetails__container_item_properties_item}
@@ -88,8 +81,7 @@ function JobDetails({ jobs }: JobsProps) {
                 >
                   Show More
                 </button>
-                {expandedJob && <ExpandedJob jobs={jobs} />}
-
+                {expandedJob && <ExpandedJob job={item} setExpandedJob={setExpandedJob} />}
                 <div className={styles.jobDetails__container_item_footer_save}>
                   Save
                 </div>

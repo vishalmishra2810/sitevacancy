@@ -35,6 +35,11 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
         gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.02);
+        }
         .categorySection__card__item__title {
           margin-top: 24px;
           font-size: 16px;
@@ -73,6 +78,11 @@
         font-weight: 700;
         line-height: 1.5;
         font-family: "Open Sans", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.02);
+        }
       }
     }
   }

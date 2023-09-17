@@ -1,67 +1,59 @@
 import SanityDescription from "@/common/sanityDescription/SanityDescription";
 import SanityImage from "@/common/sanityImage/SanityImage";
 import JobListing from "@/response/jobListing";
-import styles from "../JobDetails.module.scss";
 import React from "react";
-import { CloseOutlined } from "@ant-design/icons";
+import styles from "./ExpandedJob.module.scss";
+import CrossIcon from "./../../../../assets/cross.svg";
+import Image from "next/image";
 
-export const ExpandedJob: React.FC<{ jobs: JobListing[] }> = ({ jobs }) => {
+export const ExpandedJob: React.FC<{
+  job: JobListing;
+  setExpandedJob: (value: boolean) => void;
+}> = ({ job, setExpandedJob }) => {
+  const clickToCloseModal = () => {
+    setExpandedJob(false);
+  };
+
+  const checkClickOnBackGround = (event: any) => {
+    if (event.target.className === styles.expandedJob) {
+      setExpandedJob(false);
+    }
+  };
   return (
-    <div className={styles.jobDetails}>
-      <div className={styles.jobDetails__container}>
-        {jobs &&
-          jobs?.map((item: JobListing, index: number) => (
-            <div className={styles.jobDetails__container_item} key={index}>
-              <div className={styles.jobDetails__container_item_company}>
-                <SanityImage img={item?.companyLogo} />
-                <div className={styles.jobDetails__container_item_company_name}>
-                  {item?.companyName}
-                </div>
-              </div>
-              <div className={styles.jobDetails__container_item_title}>
-                {item?.jobTitle}
-              </div>
-              <CloseOutlined rev={undefined} />
-              <div className={styles.jobDetails__container_item_description}>
-                <SanityDescription
-                  description={item?.jobDescription}
-                  limit={3}
-                />
-              </div>
-              <div className={styles.jobDetails__container_item_properties}>
-                <div
-                  className={styles.jobDetails__container_item_properties_item}
-                >
-                  {item.jobType}
-                </div>
-                <div
-                  className={styles.jobDetails__container_item_properties_item}
-                >
-                  {item.location}
-                </div>
-                <div
-                  className={styles.jobDetails__container_item_properties_item}
-                >
-                  {new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                  }).format(parseFloat(item?.salary))}
-                </div>
-              </div>
-              <div className={styles.jobDetails__container_item_footer}>
-                <button
-                  // onClick={handleButtonChange}
-                  className={styles.jobDetails__container_item_footer_apply}
-                >
-                  Show More
-                </button>
-                {/* {expandedJob && <ExpandedJob />} */}
-                <div className={styles.jobDetails__container_item_footer_save}>
-                  Save
-                </div>
-              </div>
+    <div className={styles.expandedJob} onClick={checkClickOnBackGround}>
+      <div className={styles.expandedJob__container}>
+        <div className={styles.expandedJob__container_close}>
+          <Image
+            src={CrossIcon}
+            alt="X"
+            width={20}
+            height={20}
+            className={styles.expandedJob__container_close_icon}
+            onClick={clickToCloseModal}
+          />
+        </div>
+        <div className={styles.expandedJob__container_company_description}>
+          <div className={styles.expandedJob__container_company}>
+            <SanityImage img={job?.companyLogo} />
+            <div className={styles.expandedJob__container_company_name}>
+              {job?.companyName}
             </div>
-          ))}
+          </div>
+          <div className={styles.expandedJob__container_title}>
+            {job?.jobTitle}
+          </div>
+          <div className={styles.expandedJob__container_description}>
+            <SanityDescription description={job?.jobDescription} limit={3} />
+          </div>
+          <div className={styles.expandedJob__container_button}>
+            <button className={styles.expandedJob__container_button_apply}>
+              Apply Now
+            </button>
+            <button className={styles.expandedJob__container_button_save}>
+              Save Job
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
