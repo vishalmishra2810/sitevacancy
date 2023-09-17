@@ -111,7 +111,9 @@ function TopSection() {
             >
               Search
             </button>
-            {searchResult.length> 0 && <ShowSearchResult searchResult={searchResult} />}
+            {searchResult.length > 0 && (
+              <ShowSearchResult searchResult={searchResult} />
+            )}
           </div>
         </div>
         <div className={style.topSection__body__right}>

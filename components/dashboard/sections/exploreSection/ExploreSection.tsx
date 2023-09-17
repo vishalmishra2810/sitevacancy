@@ -2,6 +2,7 @@ import React from "react";
 import style from "./ExploreSection.module.scss";
 import explore from "../../../../assets/explore.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function ExploreSection() {
   return (
@@ -21,13 +22,17 @@ function ExploreSection() {
             Over 1000+ talented People Registered in our website
           </h2>
           <p className={style.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            tincidunt, nisl eget ultricies tincidunt, nisl elit lacinia tortor,
-            vitae lacinia nisl lorem eget nisl. Sed tincidunt, nisl eget
-            ultricies tincidunt, nisl elit lacinia tortor, vitae lacinia nisl
-            lorem eget nisl.
+            Discover a thriving talent hub with 1000+ registered individuals on
+            our website. Our diverse community encompasses artists, designers,
+            programmers, and more. We ensure top-quality talent through careful
+            vetting. Enjoy networking opportunities, collaborations, and job
+            postings. For talented individuals, it's a spotlight for your
+            skills. For businesses, it's a source of top-tier talent. Join our
+            community today at Site Vacancy and unlock endless possibilities.
           </p>
-          <div className={style.exploreSection__right__btn}>Explore More </div>
+          <div className={style.exploreSection__right__btn}>
+            <Link href={"/job-list"}>Explore More </Link>
+          </div>
         </div>
       </div>
     </div>

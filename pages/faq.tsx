@@ -8,7 +8,7 @@ function faq() {
     <>
       <Header />
       <FAQ />
-      <Footer/>
+      <Footer />
     </>
   );
 }
