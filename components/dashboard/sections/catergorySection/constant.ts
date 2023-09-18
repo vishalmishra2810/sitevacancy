@@ -1,11 +1,11 @@
 export const CATEGORY_SECTION = [
   {
-    title: "FrontEnd Developer",
+    title: "Software Developer",
     description: 200,
     color: "#FA4F08",
   },
   {
-    title: "BackeEnd Developer",
+    title: "Cybersecurity Analyst",
     description: 200,
     color: "#6736C3",
   },
@@ -20,17 +20,17 @@ export const CATEGORY_SECTION = [
     color: "#005BF9",
   },
   {
-    title: "FrontEnd Developer",
+    title: "Machine Learning Engineer",
     description: 200,
     color: "#005BF9",
   },
   {
-    title: "FrontEnd Developer",
+    title: "Project Manager",
     description: 200,
     color: "#FEB813",
   },
   {
-    title: "FrontEnd Developer",
+    title: "Data Scientist",
     description: 200,
     color: "#6736C3",
   },

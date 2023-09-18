@@ -18,9 +18,9 @@ function ConnectUs() {
         </p>
         <div
           className={style.connectUs__btn}
-          onClick={() => router.push(URLPaths.REGISTER)}
+          onClick={() => router.push(URLPaths.JOB_LIST)}
         >
-          Sign Up
+          Explore Jobs
         </div>
       </div>
       <div className={style.connectUs__bubble_bottom}></div>

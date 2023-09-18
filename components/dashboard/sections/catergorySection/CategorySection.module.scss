@@ -11,7 +11,7 @@
       line-height: 1.5;
       font-family: "Open Sans", sans-serif;
       color: var(--primary-black);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     .description {
       text-align: center;
@@ -36,7 +36,7 @@
         border-radius: 20px;
         gap: 8px;
         cursor: pointer;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
         &:hover {
           transform: scale(1.02);
         }
@@ -79,7 +79,7 @@
         line-height: 1.5;
         font-family: "Open Sans", sans-serif;
         cursor: pointer;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
         &:hover {
           transform: scale(1.02);
         }
