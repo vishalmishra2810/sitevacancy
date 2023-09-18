@@ -26,7 +26,7 @@ function TestimonialSection() {
               </div>
 
               <h3 className={style.testimonialSection__card__content__title}>
-                John Doe
+                {item?.name}
               </h3>
               <p className={style.testimonialSection__card__content__subtitle}>
                 {item?.designation}
@@ -34,9 +34,7 @@ function TestimonialSection() {
               <p
                 className={style.testimonialSection__card__content__description}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                tincidunt, nisl eget ultricies tincidunt, nisl elit lacinia
-                tortor, vitae lacinia nisl lorem eget nisl. Sed tincidunt, nisl
+                {item?.description}
               </p>
             </div>
           ))}

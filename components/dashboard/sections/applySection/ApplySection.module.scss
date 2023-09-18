@@ -36,6 +36,10 @@
       position: relative;
       width: 250px;
       height: 250px;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.02);
+      }
       .applySection__body__item__body {
         position: absolute;
         width: 250px;
