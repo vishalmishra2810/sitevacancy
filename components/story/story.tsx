@@ -5,8 +5,8 @@ export default function StoryHub() {
   return (
     <div className={styles.story}>
       <div className={styles.container}>
-        {storiesData.map((story: any) => (
-          <div className={styles.storyCard}>
+        {storiesData.map((story: any, index:number) => (
+          <div className={styles.storyCard} key={index}>
             <h2>{story.title}</h2>
             <p className={styles.author}>By {story.author}</p>
             <p>{story.content}</p>
