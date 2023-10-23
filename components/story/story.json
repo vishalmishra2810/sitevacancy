@@ -1,0 +1,12 @@
+[
+  {
+    "type": "story",
+    "name": "Job Site",
+    "description": "Job Site",
+    "estimate": 1,
+    "current_state": "unstarted",
+    "requested_by_id": 1,
+    "owner_ids": [1],
+    "labels": ["job site"]
+  }
+]
