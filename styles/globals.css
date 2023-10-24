@@ -1,36 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
-  font-family: "Open Sans";
-  src: url("./../assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+    font-family: 'OpenSansBold';
+    src: local(''), url('./../assets/fonts/OpenSans-Bold.ttf');
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("./../assets/fonts/Poppins-Regular.ttf");
+    font-family: 'OpenSans';
+    src: local(''), url('./../assets/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local(''), url('./../assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local(''), url('./../assets/fonts/Roboto-Regular.ttf');
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
+.remove-scrollBar {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none /* Firefox */;
+    -ms-overflow-style: none;
+}
+.remove-scrollBar::-webkit-scrollbar {
+    display: none;
+}
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 :root {
-  --primary-red: #fa4f08;
-  --primary-black: #0a1033;
-  --primary-blue: #005bf9;
-  --primary-yellow: #feb813;
-  --secondary-white: #fffaf9;
-  --max-width: 1100px;
+    --primary-red: #fa4f08;
+    --primary-black: #0a1033;
+    --primary-blue: #005bf9;
+    --primary-yellow: #feb813;
+    --secondary-white: #fffaf9;
+    --max-width: 1100px;
+}
+
+.input-shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
