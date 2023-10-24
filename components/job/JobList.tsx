@@ -3,10 +3,9 @@ import JobDetails from "./jobDetails/JobDetails";
 import styles from "./JobList.module.scss";
 import LeftSideBar from "./leftSideBar/LeftSideBar";
 import Footer from "@/common/footer/Footer";
-import JobListing from "@/response/jobListing";
 
 interface JobsProps {
-  jobs: JobListing[];
+  jobs: any[];
 }
 function JobList({ jobs}:JobsProps) {
   return (
