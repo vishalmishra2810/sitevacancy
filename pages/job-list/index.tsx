@@ -1,12 +1,10 @@
 import Header from "@/common/header/Header";
 import JobList from "@/components/job/JobList";
-import JobListing from "@/response/jobListing";
-import { fetchJobs } from "@/service/jobListing";
 import { GetServerSideProps } from "next";
 import React from "react";
 
 interface JobsProps {
-  jobs: JobListing[];
+  jobs: any[];
 }
 function Jobs({ jobs }: JobsProps) {
   return (
@@ -18,7 +16,7 @@ function Jobs({ jobs }: JobsProps) {
 }
 export const getServerSideProps: GetServerSideProps<JobsProps> = async () => {
   try {
-    const jobs = await fetchJobs();
+    const jobs = [] as any;
     return {
       props: { jobs },
     };

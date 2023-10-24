@@ -1,13 +1,12 @@
 import SanityDescription from "@/common/sanityDescription/SanityDescription";
 import SanityImage from "@/common/sanityImage/SanityImage";
-import JobListing from "@/response/jobListing";
 import React from "react";
 import styles from "./ExpandedJob.module.scss";
 import CrossIcon from "./../../../../assets/cross.svg";
 import Image from "next/image";
 
 export const ExpandedJob: React.FC<{
-  job: JobListing;
+  job: any;
   setExpandedJob: (value: boolean) => void;
 }> = ({ job, setExpandedJob }) => {
   const clickToCloseModal = () => {

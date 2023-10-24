@@ -1,7 +1,6 @@
 import CustomSelect from "@/common/customSelect/CustomSelect";
 import React, { useState } from "react";
 import styles from "./JobDetails.module.scss";
-import JobListing from "@/response/jobListing";
 import SanityImage from "@/common/sanityImage/SanityImage";
 import { ExpandedJob } from "./ExpandedJob/expandedJob";
 
@@ -12,7 +11,7 @@ const options = [
 ];
 
 interface JobsProps {
-  jobs: JobListing[];
+  jobs: any[];
 }
 function JobDetails({ jobs }: JobsProps) {
   const [selectedOption, setSelectedOption] = useState(options[0].value);
@@ -43,7 +42,7 @@ function JobDetails({ jobs }: JobsProps) {
       </div>
       <div className={styles.jobDetails__container}>
         {jobs &&
-          jobs?.map((item: JobListing, index: number) => (
+          jobs?.map((item: any, index: number) => (
             <div className={styles.jobDetails__container_item} key={index}>
               <div className={styles.jobDetails__container_item_company}>
                 <SanityImage img={item?.companyLogo} />
