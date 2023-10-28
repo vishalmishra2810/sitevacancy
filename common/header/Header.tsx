@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-import styles from "./Header.module.scss";
 
 function Header() {
   const router = useRouter();
@@ -9,10 +8,12 @@ function Header() {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.topSection__header__logo} onClick={goToHomePage}>
+    <header className="flex px-[32px] py-[16px] items-center">
+      <div className="cursor-pointer font-bold text-[32px] font-OpenSans"
+      onClick={goToHomePage}>
         Site
-        <span className={styles.topSection_red}>Vacancy</span>
+        <span className="text-primaryRed">
+          Vacancy</span>
       </div>
     </header>
   );
