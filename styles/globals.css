@@ -61,3 +61,39 @@ a {
 .input-shadow {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+.slow-transition {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.apply-section-shadow {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+.animate-text-slide {
+    opacity: 0;
+    animation: fadeInOut 6s linear infinite;
+}
+
+@keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-infinite-scroll ul {
+    animation: scrollHorizontally 70s linear infinite;
+}
+@keyframes scrollHorizontally {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
