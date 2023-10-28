@@ -41,14 +41,14 @@ function TopSection() {
     return (
         <div className="w-[var(--max-width)] mx-auto">
             <div className="h-[96px] flex items-center justify-between gap-[72px]">
-                <div className="OpenSans text-[36px] font-[800]" onClick={goToHomePage}>
+                <div className="OpenSans text-[36px] cursor-pointer font-[800]" onClick={goToHomePage}>
                     Site
                     <span className="text-primaryRed">Vacancy</span>
                 </div>
                 <ul className="flex items-center gap-[42px] list-none">
                     {HEADER_LINKS.map((item, index) => (
                         <Link
-                            className="text-[18px] font-[500] cursor-pointer hover:text-primaryRed font-Roboto"
+                            className="text-[18px] font-[500] text-primaryBlack cursor-pointer hover:text-primaryRed font-Roboto transition-all duration-300 hover:font-bold"
                             key={index}
                             href={item?.path}
                         >
@@ -75,6 +75,9 @@ function TopSection() {
                         className={`${
                             searchResult.length > 0 && 'rounded-bl-[0px] rounded-br-[0px]'
                         } mt-[62px] w-full flex items-center gap-2 h-[72px] rounded-[36px] input-shadow px-8 relative`}
+                        onClick={() => {
+                            router.push(URLPaths.JOB_LIST);
+                        }}
                     >
                         <Image src={search} alt="search" width={32} height={32} />
                         <input

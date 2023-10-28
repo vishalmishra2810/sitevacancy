@@ -1,7 +1,6 @@
 import React from 'react';
 import ApplySections from './sections/applySection/ApplySection';
 import CategorySection from './sections/catergorySection/CategorySection';
-import ExcitingJob from './sections/excitingJobSection/ExcitingJob';
 import ExploreSection from './sections/exploreSection/ExploreSection';
 import FeatureSection from './sections/featureSection/FeatureSection';
 import PostJobSection from './sections/postJobSection/PostJobSection';
@@ -15,11 +14,10 @@ function Dashboard() {
         <div className="remove-scrollBar flex flex-col w-full h-[100vh] bg-secondaryWhite">
             <TopSection />
             <CategorySection />
-            <ApplySections />
             <PostJobSection />
+            <ApplySections />
             <FeatureSection />
             <ExploreSection />
-            {/* <ExcitingJob /> */}
             <TestimonialSection />
             <OurCustomer />
             <Footer />

@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './CategorySection.module.scss';
 import { CATEGORY_SECTION } from './constant';
 import { useRouter } from 'next/router';
 import { URLPaths } from '@/utils/constant';
@@ -21,16 +20,16 @@ function CategorySection() {
                 <div className="flex flex-wrap gap-6 mt-[52px]">
                     {CATEGORY_SECTION?.map((item, index) => (
                         <div
-                            className="flex w-[256px] flex-col items-center rounded-[20px] justify-center gap-2 apply-section-shadow slow-transition"
+                            className="flex w-[256px] flex-col items-center cursor-pointer rounded-[16px] justify-center gap-1 apply-section-shadow slow-transition"
                             key={index}
                             onClick={() => {
                                 openJobCategory(item?.title);
                             }}
                         >
-                            <h3 className="text-[16px] text-primaryBlack font-[700] font-OpenSans text-center mt-[24px]">
+                            <h3 className="text-[16px] text-primaryBlue font-[800] font-OpenSans text-center mt-[24px]">
                                 {item?.title}
                             </h3>
-                            <p className="text-[14px] text-primaryBlack font-[400] text-center mb-[24px] font-Poppins">
+                            <p className="text-[14px] text-primaryBlack font-[400] text-center mb-[24px] font-Roboto">
                                 {item?.description}+ Posted New Jobs
                             </p>
                             <div
@@ -42,12 +41,12 @@ function CategorySection() {
                         </div>
                     ))}
                     <div
-                        className="flex w-[256px] border border-primaryRed flex-col items-center rounded-[20px] justify-center gap-8 apply-section-shadow cursor-pointer font-OpenSans font-[700] text-[20px] slow-transition"
+                        className="flex w-[256px] border border-primaryRed text-primaryBlue flex-col items-center rounded-[16px] justify-center gap-8 apply-section-shadow cursor-pointer font-OpenSans font-[700] text-[18px] apply-section-shadow  slow-transition"
                         onClick={() => {
                             openJobCategory('');
                         }}
                     >
-                        100+ More Category
+                        <span className="animate-character">50+ More Category</span>
                     </div>
                 </div>
             </div>
