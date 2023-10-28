@@ -22,10 +22,13 @@ export default function TestimonialSection() {
         }
     ];
     return (
-        <div className="w-[var(--max-width)] mx-auto my-[60px]">
-            <div className="container mx-auto flex flex-col md:flex-row shadow-sm overflow-hidden">
+        <div className="py-28 bg-gray-900 w-full mx-auto my-[60px]">
+            <div className="w-[var(--max-width)] rounded-[14px] mx-auto flex flex-col md:flex-row shadow-sm overflow-hidden">
                 <div className="relative w-full py-2 md:py-24 bg-primaryRed md:w-1/2 flex flex-col item-center justify-center">
-                    {/* Your existing content */}
+                    <div className="absolute top-0 left-0 mt-3 ml-4 md:mt-5 md:ml-12">{/* Your SVG icon */}</div>
+                    <h2 className="text-white text-3xl md:text-4xl font-bold text-center md:text-left px-6 md:px-16">
+                        What our customers are saying
+                    </h2>
                 </div>
                 <div className="bg-gray-100 md:w-1/2">
                     <div className="flex flex-col h-full relative">

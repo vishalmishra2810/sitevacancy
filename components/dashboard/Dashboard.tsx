@@ -8,6 +8,7 @@ import TestimonialSection from './sections/testimonialSection/TestimonialSection
 import TopSection from './sections/topSection/TopSection';
 import OurCustomer from './sections/ourCustomer/OurCustomer';
 import Footer from '@/common/footer/Footer';
+import StatsSection from './sections/statsSection/StatsSection';
 
 function Dashboard() {
     return (
@@ -16,9 +17,10 @@ function Dashboard() {
             <CategorySection />
             <PostJobSection />
             <ApplySections />
+            <StatsSection />
             <FeatureSection />
-            <ExploreSection />
             <TestimonialSection />
+            <ExploreSection />
             <OurCustomer />
             <Footer />
         </div>
