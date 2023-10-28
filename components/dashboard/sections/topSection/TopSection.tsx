@@ -8,6 +8,7 @@ import { HEADER_LINKS } from './constant';
 import Link from 'next/link';
 import axios from 'axios';
 import ShowSearchResult from '@/common/showSearchResult/ShowSearchResult';
+import SlidingText from '@/components/slidingText/SlidingText';
 
 let throttle: any = null;
 function TopSection() {
@@ -59,12 +60,16 @@ function TopSection() {
             <div className="flex items-center gap-3 my-[64px]">
                 <div className="flex-[2]">
                     <h1 className="text-[60px] font-[700] mb-8 font-OpenSans leading-[1.1]">
-                        Find Your <span className="text-primaryRed">Dream Job</span> <br />
+                        Find Your{' '}
+                        <span className="text-primaryRed">
+                            <SlidingText />
+                        </span>{' '}
+                        <br />
                         Now {"It's"} Easy.
                     </h1>
                     <p className="text-[20px] font-[500] font-Roboto italic mb-12">
-                        Thousands of jobs here. Find your New Job <br />
-                        Today! New Jobs Added Every Day.
+                        Discover Your Dream Job Today! Thousands of New <br />
+                        jobs Added Daily for Your Next Career Move.
                     </p>
                     <div
                         className={`${
