@@ -1,4 +1,4 @@
-export default () => {
+const starts = () => {
 
     const stats = [
         {
@@ -47,3 +47,5 @@ export default () => {
         </section>
     )
 }
+
+export default starts;

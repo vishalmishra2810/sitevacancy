@@ -1,4 +1,4 @@
-export default () => {
+const pageNotFount= () => {
     return (
         <main>
             <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
@@ -36,3 +36,5 @@ export default () => {
         </main>
     );
 };
+
+export default pageNotFount;

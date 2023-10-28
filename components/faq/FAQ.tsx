@@ -47,7 +47,7 @@ const FaqsCard = (props: any) => {
     );
 };
 
-export default () => {
+const FAQ= () => {
     const faqsList = [
         {
             q: 'What are some random questions to ask?',
@@ -87,3 +87,5 @@ export default () => {
         </section>
     );
 };
+
+export default FAQ;
