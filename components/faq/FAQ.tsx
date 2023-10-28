@@ -81,7 +81,7 @@ const FAQ= () => {
             </div>
             <div className="mt-14 max-w-2xl mx-auto">
                 {faqsList.map((item, idx) => (
-                    <FaqsCard idx={idx} faqsList={item} />
+                    <FaqsCard idx={idx} faqsList={item} key={idx} />
                 ))}
             </div>
         </section>
