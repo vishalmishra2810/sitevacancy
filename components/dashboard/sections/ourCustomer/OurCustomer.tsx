@@ -13,7 +13,7 @@ const OurCustomer = () => {
                                     <li
                                         key={index}
                                         className="
-                                    text-white text-[36px] font-semibold font-OpenSans 
+                                    text-white text-[36px] font-bold font-OpenSans 
                                     "
                                     >
                                         {item}

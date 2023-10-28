@@ -30,10 +30,12 @@ function ApplySections() {
                                 style={{ filter: item.hex_color }}
                                 className="mt-2"
                             />
-                            <h3 className="text-[22px] text-primaryBlack font-[800] font-Poppins text-center mt-[12px]">
+                            <h3
+                                className={`text-[22px] text-primaryBlack font-[800] text-center mt-[12px] font-OpenSans`}
+                            >
                                 {item?.title}
                             </h3>
-                            <p className="text-[16px] text-primaryBlack font-[400] font-OpenSans text-center mt-[12px]">
+                            <p className="text-[16px] text-primaryBlack font-[400] font-Roboto text-center mt-[12px]">
                                 {item?.description}
                             </p>
                         </div>
