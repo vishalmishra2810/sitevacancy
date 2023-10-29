@@ -7,7 +7,6 @@ import { URLPaths } from '@/utils/constant';
 import { HEADER_LINKS } from './constant';
 import Link from 'next/link';
 import axios from 'axios';
-import ShowSearchResult from '@/common/showSearchResult/ShowSearchResult';
 import SlidingText from '@/components/slidingText/SlidingText';
 
 let throttle: any = null;
@@ -93,7 +92,6 @@ function TopSection() {
                         >
                             Search
                         </button>
-                        {searchResult.length > 0 && <ShowSearchResult searchResult={searchResult} />}
                     </div>
                 </div>
                 <div className="flex-1 w-full h-full ">
