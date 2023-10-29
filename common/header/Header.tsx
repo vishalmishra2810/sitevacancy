@@ -8,7 +8,7 @@ function Header() {
   };
 
   return (
-    <header className="flex px-[32px] py-[16px] items-center">
+    <header className="flex px-[32px] py-[16px] items-center border-b border-[red]">
       <div className="cursor-pointer font-bold text-[32px] font-OpenSans"
       onClick={goToHomePage}>
         Site

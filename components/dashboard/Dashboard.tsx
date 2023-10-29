@@ -20,7 +20,7 @@ function Dashboard() {
             <StatsSection />
             <FeatureSection />
             <TestimonialSection />
-            <ExploreSection />
+            {/* <ExploreSection /> */}
             <OurCustomer />
             <Footer />
         </div>
