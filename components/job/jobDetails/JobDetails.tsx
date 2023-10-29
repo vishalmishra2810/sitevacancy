@@ -1,7 +1,6 @@
 import CustomSelect from "@/common/customSelect/CustomSelect";
 import React, { useState } from "react";
 import styles from "./JobDetails.module.scss";
-import SanityImage from "@/common/sanityImage/SanityImage";
 import { ExpandedJob } from "./ExpandedJob/expandedJob";
 
 const options = [
@@ -45,7 +44,6 @@ function JobDetails({ jobs }: JobsProps) {
           jobs?.map((item: any, index: number) => (
             <div className={styles.jobDetails__container_item} key={index}>
               <div className={styles.jobDetails__container_item_company}>
-                <SanityImage img={item?.companyLogo} />
                 <div className={styles.jobDetails__container_item_company_name}>
                   {item?.companyName}
                 </div>
