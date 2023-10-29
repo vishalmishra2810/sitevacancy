@@ -1,4 +1,3 @@
-import SanityImage from "@/common/sanityImage/SanityImage";
 import React from "react";
 import styles from "./ExpandedJob.module.scss";
 import CrossIcon from "./../../../../assets/cross.svg";
@@ -32,7 +31,6 @@ export const ExpandedJob: React.FC<{
         </div>
         <div className={styles.expandedJob__container_company_description}>
           <div className={styles.expandedJob__container_company}>
-            <SanityImage img={job?.companyLogo} />
             <div className={styles.expandedJob__container_company_name}>
               {job?.companyName}
             </div>
