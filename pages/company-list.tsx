@@ -4,10 +4,10 @@ import React from "react";
 
 function company() {
   return (
-    <>
+    <div className="remove-scrollBar flex flex-col w-full h-[100vh] bg-secondaryWhite">
       <Header />
       <CompanyList />
-    </>
+    </div>
   );
 }
 

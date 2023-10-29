@@ -1,4 +1,3 @@
-import SanityDescription from "@/common/sanityDescription/SanityDescription";
 import SanityImage from "@/common/sanityImage/SanityImage";
 import React from "react";
 import styles from "./ExpandedJob.module.scss";
@@ -42,7 +41,6 @@ export const ExpandedJob: React.FC<{
             {job?.jobTitle}
           </div>
           <div className={styles.expandedJob__container_description}>
-            <SanityDescription description={job?.jobDescription} limit={3} />
           </div>
           <div className={styles.expandedJob__container_button}>
             <button className={styles.expandedJob__container_button_apply}>

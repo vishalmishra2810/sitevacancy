@@ -20,7 +20,7 @@ function PostJobSection() {
             <div className="flex items-center gap-[24px] justify-center">
                 <div className="flex flex-1 flex-col h-[600px] justify-center">
                     <p className="text-[18px] font-[400] text-primaryBlack mt-[32px] font-Roboto">
-                        Uncover Limitless Opportunities with <span className='text-primaryRed font-semibold'> 500+ of the World's Premier Companies</span> on Our Platform.
+                        Uncover Limitless Opportunities with <span className='text-primaryRed font-semibold'> 500+ </span> of the World's Premier Companies on Our Platform.
                         Whether you're a Seasoned Professional or Embarking on Your Career Journey, our Website Serves
                         as the Gateway to Prestigious Organizations in Pursuit of Top-Tier Talent. From Tech Industry
                         Titans to Trailblazing Startups, We Bridge the Gap to a Myriad of Industries and Roles. Realize
@@ -29,8 +29,9 @@ function PostJobSection() {
                         World's Elite Corporations. Your Next Career Advancement Awaits at<br/> <b className='font-OpenSans'>SiteVacancy</b> –
                         <span className="italic">Your Ultimate Job Destination.</span>
                     </p>
-                    <div className="mt-6 cursor-pointer w-[250px] h-[62px]  flex items-center justify-center text-[16px] rounded-[4px] font-OpenSans border-[2px] border-primaryRed">
-                        <Link href={URLPaths.JOB_LIST} className='animate-character'>Your Job Destination </Link>
+                    <div className="mt-6 cursor-pointer w-[250px] h-[62px]  flex items-center justify-center text-[16px] rounded-[6px] font-OpenSans border-[1px] border-primaryBlue text-primaryBlue hover:bg-blue-50 transition-all duration-200">
+                        <Link href={URLPaths.JOB_LIST} className='text-primaryBlue font-[500] font-Poppins :hover:font-semibold'
+                        >Your Job Destination </Link>
                     </div>
                 </div>
                 <div className="flex flex-1 h-[600px] items-center justify-center">

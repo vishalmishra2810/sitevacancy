@@ -1,24 +1,16 @@
-import React from "react";
-import JobDetails from "./jobDetails/JobDetails";
-import styles from "./JobList.module.scss";
-import LeftSideBar from "./leftSideBar/LeftSideBar";
-import Footer from "@/common/footer/Footer";
+import React from 'react';
+import JobDetails from './jobDetails/JobDetails';
+import LeftSideBar from './leftSideBar/LeftSideBar';
 
-interface JobsProps {
-  jobs: any[];
-}
-function JobList({ jobs}:JobsProps) {
-  return (
-    <div className={styles.jobList}>
-      <div className={styles.main__container}>
-        <div className={styles.jobList__container}>
-          <LeftSideBar />
-          <JobDetails  jobs={jobs}/>
+function JobList() {
+    return (
+        <div className="w-[var(--max-width)] mx-auto p-[24px]">
+            <div className="flex">
+                <LeftSideBar />
+                <JobDetails jobs={[]} />
+            </div>
         </div>
-        <Footer />
-      </div>
-    </div>
-  );
+    );
 }
 
 export default JobList;

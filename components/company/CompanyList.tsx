@@ -1,38 +1,58 @@
-import React from "react";
-import styles from "./CompanyList.module.scss";
-import companiesData from "./companies.json";
-import Image from "next/image";
+import React from 'react';
 
-const CompanyList = () => {
+function CompanyList() {
   return (
-    <div className={styles.companyList}>
-      <div className={styles.companyList_container}>
-        <div className={styles.companyList_header}>
-          Find Companies that are hiring
+    <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+      <div className="-m-1 flex flex-wrap md:-m-2">
+        <div className="flex w-1/2 flex-wrap">
+          <div className="w-1/2 p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
+            />
+          </div>
+          <div className="w-1/2 p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
+            />
+          </div>
+          <div className="w-full p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+            />
+          </div>
         </div>
-        <div className={styles.companyList_subheader}>
-          Here are some companies that are hiring right now. Click on the
-          company <br /> name to see the job listings.
-        </div>
-        <div className={styles.companyList_items}>
-          {companiesData.map((company: any, index: number) => (
-            <div key={index} className={styles.companyCard}>
-              <Image
-                src={company.logo}
-                alt={company.name}
-                width={80}
-                height={80}
-              />
-              <h2 className={styles.companyCard_name}>{company.name}</h2>
-              <p className={styles.companyCard_description}>
-                {company.description}
-              </p>
-            </div>
-          ))}
+        <div className="flex w-1/2 flex-wrap">
+          <div className="w-full p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+            />
+          </div>
+          <div className="w-1/2 p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
+            />
+          </div>
+          <div className="w-1/2 p-1 md:p-2">
+            <img
+              alt="gallery"
+              className="block h-full w-full rounded-lg object-cover object-center"
+              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"
+            />
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default CompanyList;
