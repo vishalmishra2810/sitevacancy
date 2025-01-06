@@ -29,7 +29,7 @@ function JobPost() {
                             {/* Link to apply */}
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm mb-2" htmlFor="apply-link">
-                                    Link to apply
+                                    Link to Apply
                                 </label>
                                 <input
                                     className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
