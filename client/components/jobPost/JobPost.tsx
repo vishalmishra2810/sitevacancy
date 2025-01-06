@@ -53,7 +53,7 @@ function JobPost() {
                                             name="job-type"
                                         >
                                             <option>Full-time</option>
-                                            <option>Part-time</option>
+                                            <option>Part-Time</option>
                                             <option>Freelance</option>
                                             <option>Contract</option>
                                         </select>
