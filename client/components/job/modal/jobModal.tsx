@@ -6,6 +6,10 @@ interface JobModalProps {
 
 const JobModal: React.FC<JobModalProps> = ({ setIsOpen }) => {
 
+  function ApplyTo() {
+
+  }
+
   return (
     <div>
 
@@ -52,9 +56,9 @@ const JobModal: React.FC<JobModalProps> = ({ setIsOpen }) => {
           <div className="mt-4 text-sm">We are looking for Engineers with expertise and experience in designing, developing, implementing, and scaling web applications for our rapidly growing Technology team. We are expanding our team and are looking for innovative, high-energy, bright individuals who can contribute to the growth of one of the fastest-growing product companies in India.<br /><br /></div>
           <button
             className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
-
+            onClick={() => window.open("https://www.google.com/about/careers/applications/", "_blank")}
           >
-            Close Modal
+            Apply
           </button>
         </div>
 
