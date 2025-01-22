@@ -3,11 +3,35 @@ import dynamic from 'next/dynamic';
 const RichTextEditor = dynamic(() => import('./Editor'), { ssr: false });
 
 function JobPost() {
+
+    const [formData, setFormData] = useState({
+        title: '',
+        applyLink: '',
+        jobType: 'Full-time',
+        location: '',
+        company: '',
+        companyWebsite: '',
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('Form Data:', formData);
+    };
+
+
     return (
         <div className="bg-gray-400">
             <main className="main bg-white px-6 md:px-16 py-6">
                 <div className="w-full max-w-xl mx-auto">
-                    <form action="" method="post">
+                    <form onSubmit={handleSubmit}>
                         <h1 className="text-2xl mb-2">Post new job</h1>
 
                         <div className="job-info border-b-2 py-2 mb-5">
@@ -18,9 +42,11 @@ function JobPost() {
                                 </label>
                                 <input
                                     className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-                                    type="email"
+                                    type="text"
                                     id="job-title"
                                     name="job-title"
+                                    // value={formData.title}
+                                    onChange={handleChange}
                                     placeholder="Frontend Developer"
                                     autoFocus
                                 />
@@ -36,6 +62,8 @@ function JobPost() {
                                     type="email"
                                     id="apply-link"
                                     name="apply-link"
+                                    // value={formData.applyLink}
+                                    onChange={handleChange}
                                     placeholder="https://www.djangoproject.com/apply"
                                 />
                             </div>
@@ -51,6 +79,8 @@ function JobPost() {
                                             className="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500"
                                             id="job-type"
                                             name="job-type"
+                                            // value={formData.jobType}
+                                            onChange={handleChange}
                                         >
                                             <option>Full-time</option>
                                             <option>Part-Time</option>
@@ -80,6 +110,8 @@ function JobPost() {
                                         className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
                                         id="location"
                                         name="location"
+                                        // value={formData.location}
+                                        onChange={handleChange}
                                         placeholder="Schwerin"
                                     />
 
@@ -111,6 +143,8 @@ function JobPost() {
                                         className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
                                         id="company"
                                         name="company"
+                                        // value={formData.company}
+                                        onChange={handleChange}
                                         placeholder="Company"
                                     />
                                 </div>
@@ -125,6 +159,8 @@ function JobPost() {
                                         className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
                                         id="company-website"
                                         name="company-website"
+                                        // value={formData.companyWebsite}
+                                        onChange={handleChange}
                                         placeholder="https://www.djangoproject.com/"
                                     />
                                 </div>

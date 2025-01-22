@@ -24,10 +24,18 @@ function Footer() {
                 <div className="flex-1 mt-8">
                     <h3 className="text-[20px] font-[600] text-white font-OpenSans">Company</h3>
                     <ul className="mt-6 flex flex-col gap-4">
-                        <li className="text-[16px] font-[400] font-Poppins  text-white">About Us</li>
-                        <li className="text-[16px] font-[400] font-Poppins  text-white">Contact Us</li>
-                        <li className="text-[16px] font-[400] font-Poppins  text-white">Privacy Policy</li>
-                        <li className="text-[16px] font-[400] font-Poppins  text-white">Terms & Conditions</li>
+                    <li className="text-[16px] font-[400] font-Poppins text-white">
+    <a href="/about" >About Us</a>
+  </li>
+  <li className="text-[16px] font-[400] font-Poppins text-white">
+    <a href="/contact" >Contact Us</a>
+  </li>
+  <li className="text-[16px] font-[400] font-Poppins text-white">
+    <a href="/privacy-policy" >Privacy Policy</a>
+  </li>
+  <li className="text-[16px] font-[400] font-Poppins text-white">
+    <a href="/terms-conditions" >Terms & Conditions</a>
+  </li>
                     </ul>
                 </div>
                 <div className="flex-1  mt-8">
@@ -51,7 +59,7 @@ function Footer() {
                 <div className="flex-1 mt-8">
                     <h3 className="text-[20px] font-[600] text-white font-OpenSans">Company</h3>
                     <ul className="mt-6 flex flex-col gap-4">
-                        <li className="text-[16px] font-[400] font-Poppins  text-white">About Us</li>
+                        <li className="text-[16px] font-[400] font-Poppins  text-white"><a href='/about'>About Us</a></li>
                         <li className="text-[16px] font-[400] font-Poppins  text-white">Blog </li>
                         <li className="text-[16px] font-[400] font-Poppins  text-white">Jobs </li>
                         <li className="text-[16px] font-[400] font-Poppins  text-white">FAQ</li>

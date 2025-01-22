@@ -47,27 +47,47 @@ const FaqsCard = (props: any) => {
     );
 };
 
-const FAQ= () => {
+const FAQ = () => {
     const faqsList = [
         {
-            q: 'What are some random questions to ask?',
-            a: "That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question."
+            q: 'What is Site Vacancy?',
+            a: 'Site Vacancy is a job-searching platform that connects job seekers with employers, offering opportunities across various industries and locations.'
         },
         {
-            q: 'Do you include common questions?',
-            a: "This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator."
+            q: 'How can I search for jobs on Site Vacancy?',
+            a: 'You can use the search bar on our homepage to filter jobs by keywords, location, or job type. Advanced filters are also available for a more specific search.'
         },
         {
-            q: 'Can I use this for 21 questions?',
-            a: "Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated."
+            q: 'Do I need an account to apply for jobs?',
+            a: 'Yes, creating an account allows you to save job listings, apply for jobs, and receive personalized recommendations.'
         },
         {
-            q: 'Are these questions for girls or for boys?',
-            a: 'The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with).'
+            q: 'How can I create a profile?',
+            a: 'Click on the "Sign Up" button, provide your details, upload your resume, and complete your profile to start applying for jobs.'
         },
         {
-            q: 'What do you wish you had more talent doing?',
-            a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires."
+            q: 'Are there fees for using Site Vacancy?',
+            a: 'No, Site Vacancy is completely free for job seekers. Employers may have the option to purchase premium services.'
+        },
+        {
+            q: 'How can I ensure my resume is seen by employers?',
+            a: 'Make sure your profile is complete and up-to-date, and consider using keywords related to the jobs you’re applying for.'
+        },
+        {
+            q: 'Can I save jobs to apply later?',
+            a: 'Yes, you can save jobs by clicking the "Save Job" button on any listing. You can find your saved jobs in your profile.'
+        },
+        {
+            q: 'How do I contact an employer after applying?',
+            a: 'If the employer allows direct contact, their details will be shared after you’ve submitted your application.'
+        },
+        {
+            q: 'What types of jobs can I find on Site Vacancy?',
+            a: 'Site Vacancy lists full-time, part-time, freelance, remote, and internship opportunities across various fields.'
+        },
+        {
+            q: 'How do I report a fraudulent job posting?',
+            a: 'If you suspect a job listing is fraudulent, use the "Report Job" option on the listing or contact our support team immediately.'
         }
     ];
 
