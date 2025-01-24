@@ -3,6 +3,7 @@ import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 import JobModal from './modal/jobModal';
+import jobData from './jobList.json';
 
 const sortOptions = [
     { name: 'Most Popular', href: '#', current: true },
@@ -11,13 +12,6 @@ const sortOptions = [
     { name: 'Price: Low to High', href: '#', current: false },
     { name: 'Price: High to Low', href: '#', current: false }
 ];
-// const subCategories = [
-//     { name: 'Experience', href: '#' },
-//     { name: 'Location', href: '#' },
-//     { name: 'Job Type', href: '#' },
-//     { name: 'Hip Bags', href: '#' },
-//     { name: 'Laptop Sleeves', href: '#' }
-// ];
 
 const filters = [
     {
@@ -64,8 +58,13 @@ export default function JobList() {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleAction = (action: string) => {
+        if (action === "setIsOpen") {
+            setIsOpen(true);
+        }
+    };
 
-    console.log('is open modal', isOpen)
+
     return (
         <div className="w-[var(--max-width)] mx-auto p-[24px]">
             <div className="bg-white">
@@ -187,7 +186,7 @@ export default function JobList() {
 
                     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 ">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900">Jobs(9)</h1>
+                            <h1 className="text-4xl font-bold tracking-tight text-gray-900">Jobs({jobData.length})</h1>
 
                             <div className="flex items-center">
                                 <Menu as="div" className="relative inline-block text-left">
@@ -321,16 +320,49 @@ export default function JobList() {
 
                                 {/* Product grid */}
                                 <div className="lg:col-span-3 rounded border border-gray-300">
-                                    <div className="relative flex flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Google</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
+                                    {jobData.map((job, index) => (
+                                        <div
+                                            key={index}
+                                            className="relative flex flex-col items-center justify-center overflow-hidden bg-gray-50 p-6"
+                                        >
+                                            <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
+                                                <div>
+                                                    <span className="text-purple-800 text-sm">{job.company}</span>
+                                                    <h3 className="font-bold mt-px">{job.position}</h3>
+                                                    <div className="flex items-center gap-3 mt-2">
+                                                        <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
+                                                            {job.employmentType}
+                                                        </span>
+                                                        <span className="text-slate-600 text-sm flex gap-1 items-center">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                className="h-4 w-4"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                                stroke="currentColor"
+                                                                strokeWidth="2"
+                                                            >
+                                                                <path
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                                />
+                                                                <path
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                                                />
+                                                            </svg>
+                                                            {job.location}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <button
+                                                        onClick={() => handleAction(job.apply.action)}
+                                                        className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center"
+                                                    >
+                                                        {job.apply.label}
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             className="h-4 w-4"
@@ -342,310 +374,14 @@ export default function JobList() {
                                                             <path
                                                                 strokeLinecap="round"
                                                                 strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                                d="M13 7l5 5m0 0l-5 5m5-5H6"
                                                             />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
+                                                        </svg>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-
                                         </div>
-                                    </div>
-                                    <div className="relative flex  flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6 ">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Engineering</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            className="h-4 w-4"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                            />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Engineering</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            className="h-4 w-4"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                            />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Engineering</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            className="h-4 w-4"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                            />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex  flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6 ">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Engineering</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            className="h-4 w-4"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                            />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex flex-col jus items-center justify-center overflow-hidden bg-gray-50 p-6">
-                                        <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
-                                            <div>
-                                                <span className="text-purple-800 text-sm">Engineering</span>
-                                                <h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-                                                <div className="flex items-center gap-3 mt-2">
-                                                    <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                        Full-time
-                                                    </span>
-                                                    <span className="text-slate-600 text-sm flex gap-1 items-center">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            className="h-4 w-4"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                            strokeWidth="2"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                                            />
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                                            />
-                                                        </svg>{' '}
-                                                        Remote, UK
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <button onClick={() => setIsOpen(true)} className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">
-                                                    Apply Now
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-4 w-4"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                                                        />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </section>
