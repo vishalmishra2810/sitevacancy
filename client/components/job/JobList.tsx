@@ -1,9 +1,9 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 import JobModal from './modal/jobModal';
-import jobData from './jobList.json';
+// import jobData from './jobList.json';
 
 const sortOptions = [
     { name: 'Most Popular', href: '#', current: true },
@@ -57,13 +57,33 @@ export default function JobList() {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
+    const [jobListings, setJobListings] = useState<any[]>([]);
 
-    const handleAction = (action: string) => {
-        if (action === "setIsOpen") {
+    const handleAction = () => {
+        // if (action === "setIsOpen") {
             setIsOpen(true);
-        }
+        // }
     };
 
+    useEffect(() => {
+        // Fetch job listings from Strapi API
+        const fetchJobListings = async () => {
+            try {
+                const response = await fetch('http://localhost:1337/api/job-listings');
+                const jobList = await response.json();
+
+                if (response.ok) {
+                    setJobListings(jobList.data); // Assuming the response has a `data` field
+                } else {
+                    console.error('Failed to fetch job listings:', jobList.error);
+                }
+            } catch (error) {
+                console.error('Error fetching job listings:', error);
+            }
+        };
+
+        fetchJobListings();
+    }, []);
 
     return (
         <div className="w-[var(--max-width)] mx-auto p-[24px]">
@@ -186,7 +206,7 @@ export default function JobList() {
 
                     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 ">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900">Jobs({jobData.length})</h1>
+                            <h1 className="text-4xl font-bold tracking-tight text-gray-900">Jobs({jobListings.length})</h1>
 
                             <div className="flex items-center">
                                 <Menu as="div" className="relative inline-block text-left">
@@ -320,18 +340,18 @@ export default function JobList() {
 
                                 {/* Product grid */}
                                 <div className="lg:col-span-3 rounded border border-gray-300">
-                                    {jobData.map((job, index) => (
+                                    {jobListings.map((job, index) => (
                                         <div
                                             key={index}
                                             className="relative flex flex-col items-center justify-center overflow-hidden bg-gray-50 p-6"
                                         >
                                             <div className="bg-white shadow-xl shadow-gray-100 w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded-md">
                                                 <div>
-                                                    <span className="text-purple-800 text-sm">{job.company}</span>
-                                                    <h3 className="font-bold mt-px">{job.position}</h3>
+                                                    <span className="text-purple-800 text-sm">{jobListings[index]?.CompanyName}</span>
+                                                    <h3 className="font-bold mt-px">{jobListings[index]?.JobTitle}</h3>
                                                     <div className="flex items-center gap-3 mt-2">
                                                         <span className="bg-purple-100 text-purple-700 rounded-full px-3 py-1 text-sm">
-                                                            {job.employmentType}
+                                                            {jobListings[index]?.EmploymentType}
                                                         </span>
                                                         <span className="text-slate-600 text-sm flex gap-1 items-center">
                                                             <svg
@@ -353,16 +373,17 @@ export default function JobList() {
                                                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                                 />
                                                             </svg>
-                                                            {job.location}
+                                                            {jobListings[index]?.Location}
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <button
-                                                        onClick={() => handleAction(job.apply.action)}
+                                                        onClick={() => handleAction()}
                                                         className="bg-purple-900 text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center"
                                                     >
-                                                        {job.apply.label}
+                                                        Apply Now
+                                                        {/* {job.apply.label} */}
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             className="h-4 w-4"

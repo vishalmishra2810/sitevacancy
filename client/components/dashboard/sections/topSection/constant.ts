@@ -13,10 +13,10 @@ export const HEADER_LINKS = [
     label: "Companies",
     path: URLPaths.COMPANY_LIST,
   },
-  {
-    label: "Post a Job",
-    path: URLPaths.POST_JOB,
-  },
+  // {
+  //   label: "Post a Job",
+  //   path: URLPaths.POST_JOB,
+  // },
   {
     label: " Faq",
     path: URLPaths.FAQ,
